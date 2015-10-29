@@ -21,29 +21,32 @@ such as a page specific stylesheets.
         <h1>Welcome to Programmer's best friend; LoremIpsum Genereator</h1>
 		<h2>A Lorem Ipsum generator that allows you to generate up to 1000 paragraphs of Lorem Ipsum to test your applications</h2>
 		
-		<form method='POST' action='/loremipsum'>
+		@if(count($errors) > 0)
 		
-		
-		<input type="number" max=1000 name="paragraphs" value="{{old ('population')}}"><br>
-		<h4>All text will be randomly generated</h4>
-			
-		
-			@if(count($errors) > 0)
 			<ul>
 				@foreach ($errors->all() as $error)
 					<li>{{ $error }}</li>
 				@endforeach
 			</ul>
-			@endif
+			
+		@endif
+			
+		<form method='POST' action='/loremipsum'>
+		
 		<input type="hidden" name="_token" value="{{csrf_token()}}">
+		
+		<input type="number" min='1' max='100' name="paragraphs" value="{{old ('population')}}"><br>
+
 		<input type="submit" value="generate">
 		</form>
 		
-		<form method='GET' action='/generator'>
-			<input type="hidden" name="_token" value="{{csrf_token()}}">
-			<input type="submit" value="go back">
-		</form>
-    
+		<h4>All text will be randomly generated</h4>
+		
+		<a href="/">Go Back</a>
+
+
+		
+
 @stop
 
 

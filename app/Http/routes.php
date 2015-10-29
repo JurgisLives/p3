@@ -11,10 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/generator', 'p3Controller@getIndex');
-Route::post('/usergenerator', 'p3Controller@createUsers');
-Route::post('/loremipsum', 'p3Controller@postIndex');
+
+
+Route::get('/', 'p3Controller@getIndex');
+
+Route::post('/usergenerator', 'UserController@postUsers');
+Route::get('/usergenerator', 'UserController@getUsers');
+
+
+Route::post('/loremipsum', 'TextController@postText');
+Route::get('/loremipsum', 'TextController@getText');

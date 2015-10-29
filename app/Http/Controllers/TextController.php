@@ -9,21 +9,27 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Faker\Factory as Faker;
 
-class p3Controller extends Controller
+class TextController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function getIndex(Request $request)
+    public function getText()
     {
-		return view('landing.index');		
+		return view('loremipsum.loremipsum');		
     }
 	
-	/* public function postIndex(Request $request)
-	{
-		return view('loremipsum.loremipsum');
+	public function postText(Request $request)
+	{	$paragraphs = $request->input('paragraphs');
+	
+		
+		$generator = new \Badcow\LoremIpsum\Generator();
+		$paragraphs = $generator->getParagraphs($paragraphs);
+		echo implode('<p>', $paragraphs);
+		
+		/* return view('loremipsum.loremipsum');
 		
 		$how_many = ($_POST['paragraphs']);
 			
@@ -32,14 +38,10 @@ class p3Controller extends Controller
 		]);
 		
 		//create paragraphs	
-		$generator = new \Badcow\LoremIpsum\Generator();
-		$paragraphs = $generator->getParagraphs(1);
-		echo implode('<p>', $paragraphs); */		
-		
-	
+				
+		 */
+
 			
 //dd ($request->all());
-	
-	
-	
 	}
+}

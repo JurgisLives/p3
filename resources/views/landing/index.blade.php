@@ -21,19 +21,10 @@ such as a page specific stylesheets.
         <h1>Welcome to Programmer's best friend</h1>
 		<h2>A limited suite of applications for testing your applications</h2>
 		
-		<form method='POST' action='/usergenerator'>
-
-		<input type="submit" value="user generator">
 		
-		<input type="hidden" name="_token" value="{{csrf_token()}}">
-		</form>
+		<a href="/usergenerator"> Generate Users</a><br>
+		<a href="/loremipsum"> Lorem Ipsum Generator</a>
 		
-		<form method='POST' action='/loremipsum'>
-
-		<input type="submit" value="loremipsum generator">
-		
-		<input type="hidden" name="_token" value="{{csrf_token()}}">
-		</form>
 
    
 @stop
