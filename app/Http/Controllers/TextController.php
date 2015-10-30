@@ -27,8 +27,8 @@ class TextController extends Controller
 		
 		$generator = new \Badcow\LoremIpsum\Generator();
 		$paragraphs = $generator->getParagraphs($paragraphs);
-		echo implode('<p>', $paragraphs);
-		
+
+		return view('loremipsum.loremipsum_generated')->with('paragraphs', $paragraphs);
 		/* return view('loremipsum.loremipsum');
 		
 		$how_many = ($_POST['paragraphs']);
