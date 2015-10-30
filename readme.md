@@ -15,7 +15,7 @@ Badcow/LoremIpsum
 FZaninotto Random Data Generator
 
 ## Screencast walkthrough can be found here:
-http://youtube.com/notreadyyet
+http://youtu.be/SbB5ktYyv_4?hd=1
 
 ### License
 
