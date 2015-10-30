@@ -27,7 +27,6 @@ class TextController extends Controller
 		
 		$generator = new \Badcow\LoremIpsum\Generator();
 		$paragraphs = $generator->getParagraphs($paragraphs);
-
 		return view('loremipsum.loremipsum_generated')->with('paragraphs', $paragraphs);
 		/* return view('loremipsum.loremipsum');
 		
