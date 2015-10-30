@@ -17,9 +17,31 @@ such as a page specific stylesheets.
 
 
 @section('content')
-    
-        <h1>Welcome to Programmer's best friend; Lorem Ipsum</h1>
-		<h2>A user generator that allows you to generate up to 1000 users to test your applications</h2>
+    <h1>Welcome to Programmer's best friend; LoremIpsum Genereator</h1>
+		<h2>A Lorem Ipsum generator that allows you to generate up to 1000 paragraphs of Lorem Ipsum to test your applications</h2>
+		
+		@if(count($errors) > 0)
+		
+			<ul>
+				@foreach ($errors->all() as $error)
+					<li>{{ $error }}</li>
+				@endforeach
+			</ul>
+			
+		@endif
+			
+		<form method='POST' action='/loremipsum'>
+		
+		<input type="hidden" name="_token" value="{{csrf_token()}}">
+		
+		<input type="number" min='1' max='100' name="paragraphs" value="{{old ('population')}}"><br>
+
+		<input type="submit" value="generate">
+		</form>
+		
+		<h4>All text will be randomly generated</h4>
+		
+		<a href="/">Go Back</a>
 		
 			
 			<ul>
