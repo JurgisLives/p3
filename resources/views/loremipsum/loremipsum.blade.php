@@ -18,8 +18,8 @@ such as a page specific stylesheets.
 
 @section('content')
     
-        <h1>Welcome to Programmer's best friend; LoremIpsum Genereator</h1>
-		<h2>A Lorem Ipsum generator that allows you to generate up to 1000 paragraphs of Lorem Ipsum to test your applications</h2>
+        <h1>Welcome to Programmer's best friend; LoremIpsum Generator</h1>
+		<h2>A Lorem Ipsum generator that allows you to generate up to 100 paragraphs of Lorem Ipsum to test your applications</h2>
 		
 		@if(count($errors) > 0)
 		
